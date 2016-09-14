@@ -22,7 +22,7 @@
           "actions": [
             {
               "action": "script",
-              "script": "\/\/Enter the script here\nvar arg=args[1].toLowerCase();\nif (arg==\"on\")\n    {  reflex_enable(reflex_find_by_name(\"group\",\"Fishingsub\",false,false,\"Fishing\"));\n         display_notice(\"FISHING TRIGGERS ON\");\n    }\nif (arg==\"off\")\n{\n     display_notice(\"FISHING TRIGGERS OFF\");\n    }\n"
+              "script": "var arg=args[1].toLowerCase();\nif (arg==\"on\")\n    {  reflex_enable(reflex_find_by_name(\"group\",\"Fishingsub\",false,false,\"Fishing\"));\n         display_notice(\"FISHING TRIGGERS ON\");\n    }\nif (arg==\"off\")\n{\n     display_notice(\"FISHING TRIGGERS OFF\");\n    }\n"
             }
           ],
           "text": "^fishing (\\w+)$",
@@ -201,7 +201,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\nsend_command(\"cast line \" + args[1])"
+                  "script": "send_command(\"cast line \" + args[1])"
                 }
               ],
               "text": "^cl (\\w+)$",
@@ -264,7 +264,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\ninc_variable(\"fishgold\",Math.floor(7.68*args[1]));\ninc_variable(\"caught\",1);\nsend_command(\"bh\",0);"
+                  "script": "inc_variable(\"fishgold\",Math.floor(7.68*args[1]));\ninc_variable(\"caught\",1);\nsend_command(\"bh\",0);"
                 }
               ],
               "items": [
@@ -283,7 +283,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\ninc_variable(\"fishgold\",Math.floor(7.68*args[1]+.48*args[2]));\ninc_variable(\"caught\",1);\nsend_command(\"bh\",0);"
+                  "script": "inc_variable(\"fishgold\",Math.floor(7.68*args[1]+.48*args[2]));\ninc_variable(\"caught\",1);\nsend_command(\"bh\",0);"
                 }
               ],
               "items": [
@@ -338,7 +338,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\ndisplay_notice(\"TOTAL FISH CAUGHT: \" + get_variable(\"caught\") + \"\\nTOTAL GOLD: \" + get_variable(\"fishgold\") + \"\\nLINES SNAPPED: \" + get_variable(\"snapcount\"));"
+                  "script": "display_notice(\"TOTAL FISH CAUGHT: \" + get_variable(\"caught\") + \"\\nTOTAL GOLD: \" + get_variable(\"fishgold\") + \"\\nLINES SNAPPED: \" + get_variable(\"snapcount\"));"
                 }
               ],
               "text": "fishreport",
@@ -378,7 +378,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\ninc_variable(\"snapcount\",1);\nsend_command(\"bh\",0);"
+                  "script": "inc_variable(\"snapcount\",1);\nsend_command(\"bh\",0);"
                 }
               ],
               "items": [
@@ -397,7 +397,7 @@
               "actions": [
                 {
                   "action": "script",
-                  "script": "\/\/Enter the script here\nset_variable(\"bait\",args[1]);\ndisplay_notice(\"Bait type set to \" + args[1]);"
+                  "script": "set_variable(\"bait\",args[1]);\ndisplay_notice(\"Bait type set to \" + args[1]);"
                 }
               ],
               "text": "^bt (\\w+)",
@@ -410,5 +410,5 @@
       ]
     }
   ],
-  "description": "Ver 1.0.1 FISHING ON to enable, FISHING OFF to disable. Wield a pole, then BT <bait> to set bait type. BH to initialize baiting, then CL <dir> (river\/lake) or CL <SHORT|MEDIUM|LONG> (deepsea) to cast. FISHREPORT for a gold report (May not work for deepsea). DO NOT ADD A TRIGGER TO RE-CAST THE LINE"
+  "description": "Ver 1.0.2 FISHING ON to enable, FISHING OFF to disable. Wield a pole, then BT <bait> to set bait type. BH to initialize baiting, then CL <dir> (river\/lake) or CL <SHORT|MEDIUM|LONG> (deepsea) to cast. FISHREPORT for a gold report (May not work for deepsea). DO NOT ADD A TRIGGER TO RE-CAST THE LINE"
 }
